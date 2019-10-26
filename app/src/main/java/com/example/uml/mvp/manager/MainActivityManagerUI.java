@@ -4,7 +4,14 @@ import android.annotation.SuppressLint;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.uml.R;
+import com.example.uml.fragment.DonateFragment;
+import com.example.uml.fragment.DonateFragment_;
+import com.example.uml.fragment.ListOfAnimals_;
+import com.example.uml.fragment.ListOfNecessities_;
 import com.example.uml.fragment.LoginFragment_;
+import com.example.uml.fragment.LongDescriptionAnimal_;
+import com.example.uml.fragment.MainMenuFragment;
+import com.example.uml.fragment.MainMenuFragment_;
 import com.example.uml.fragment.SignupFragment_;
 import com.example.uml.mvp.core.FragmentData;
 import com.example.uml.mvp.manager.core.BaseMainActivityManagerUI;
@@ -44,6 +51,45 @@ public class MainActivityManagerUI extends BaseMainActivityManagerUI {
                                 getSupportFragmentManager().
                                 beginTransaction());
                 break;
+            }
+            case LIST_FRAGMENT: {
+                removeFragment();
+                addFragmentToContainer(ListOfAnimals_.builder().build(), true,
+                        this.getActivity().
+                                getSupportFragmentManager().
+                                beginTransaction());
+                break;
+            }
+            case LIST_NECESSITIES: {
+                removeFragment();
+                addFragmentToContainer(ListOfNecessities_.builder().build(), true,
+                        this.getActivity().
+                                getSupportFragmentManager().
+                                beginTransaction());
+                break;
+            }
+            case LONG_DESCRIPTION_FRAGMENT:
+            {
+                removeFragment();
+                addFragmentToContainer(LongDescriptionAnimal_.builder().build(), true,
+                        this.getActivity().
+                                getSupportFragmentManager().
+                                beginTransaction());
+                break;
+            }
+            case MAIN_FRAGMENT:{
+                removeFragment();
+                addFragmentToContainer(MainMenuFragment_.builder().build(), true,
+                        this.getActivity().
+                                getSupportFragmentManager().
+                                beginTransaction());
+            }
+            case DONATE_FRAGMENT:{
+                removeFragment();
+                addFragmentToContainer(DonateFragment_.builder().build(), false,
+                        this.getActivity().
+                                getSupportFragmentManager().
+                                beginTransaction());
             }
         }
     }

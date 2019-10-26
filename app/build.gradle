@@ -35,4 +35,7 @@ dependencies {
     implementation 'org.jetbrains:annotations:15.0'
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'io.reactivex:rxjava:1.1.6'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:26.1.0'
 }

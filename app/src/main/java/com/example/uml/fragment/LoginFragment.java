@@ -21,11 +21,13 @@ public class LoginFragment extends BaseFragment {
     @ViewById(R.id.btnSignup)
     Button btnSignup;
 
+    @ViewById(R.id.buttonLogin)
+    Button buttonLogin;
+
     @AfterViews
     public void mainWork() {
         EditText inputEmail = Objects.requireNonNull(getActivity()).findViewById(R.id.inputEmail);
         EditText inputPassword = Objects.requireNonNull(getActivity()).findViewById(R.id.inputPassword);
-        Button buttonLogin = Objects.requireNonNull(getActivity()).findViewById(R.id.buttonLogin);
         buttonLogin.setEnabled(false);
 
         Observable<String> emailObservable = RxEditText.getTextWatcherObservable(inputEmail);
@@ -37,5 +39,11 @@ public class LoginFragment extends BaseFragment {
     @Click
     void btnSignup() {
         ((BaseActivity) Objects.requireNonNull(getActivity())).changeFragmentTo(new FragmentData(FragmentById.SIGNUP_FRAGMENT));
+    }
+
+    @Click
+    void buttonLogin() {
+        System.out.println("otsosi");
+        ((BaseActivity) Objects.requireNonNull(getActivity())).changeFragmentTo(new FragmentData(FragmentById.MAIN_FRAGMENT));
     }
 }

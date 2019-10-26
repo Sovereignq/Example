@@ -3,7 +3,14 @@
     <string name="signup_button">Signup</string>
     <string name="login_text">Login</string>
     <string name="email">Email</string>
+    <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="forgot_pass">Forgot Password?</string>
     <string name="confirm_pass">Confirm Password</string>
+    <string name="card_number">card number</string>
+    <string name="cvv">cvv</string>
+    <string name="last_date_of_work_month_years">month / years</string>
+    <string name="donate_them_a_bit_of_money_if_you_can">Donate them a bit of money, if you can</string>
+    <string name="amount_of_money_in_usd">amount of money in USD</string>
+    <string name="pay">pay</string>
+    <string name="lonely_animals_have_no_one_to_be_liked_by">lonely animals have no one to be liked by.</string>
 </resources>

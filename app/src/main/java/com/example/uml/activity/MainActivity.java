@@ -3,6 +3,8 @@ package com.example.uml.activity;
 import android.annotation.SuppressLint;
 import com.example.uml.R;
 import com.example.uml.activity.core.BaseActivity;
+import com.example.uml.info.AnimalInfoClass;
+import com.example.uml.info.Necessities;
 import com.example.uml.mvp.core.FragmentById;
 import com.example.uml.mvp.core.FragmentData;
 import com.example.uml.mvp.manager.MainActivityManagerUI;
@@ -10,10 +12,15 @@ import com.example.uml.mvp.manager.core.core.ManagerUI;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SuppressLint("Registered")
 @EActivity(R.layout.activity_main)
 public class MainActivity extends BaseActivity {
-
+    public static int currIndex = 0;
+    public static List<AnimalInfoClass> listOfAnimals = new ArrayList<>();
+    public static List<Necessities> listOfNecessities = new ArrayList<>();
     @AfterViews
     public void init() {
         changeFragmentTo(new FragmentData(FragmentById.LOGIN_FRAGMENT));
