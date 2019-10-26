@@ -16,7 +16,7 @@ import java.util.Objects;
 import rx.Observable;
 
 @EFragment(R.layout.fragment_login)
-public class LoginFragment extends BaseFragment {
+class LoginFragment extends BaseFragment {
 
     @ViewById(R.id.btnSignup)
     Button btnSignup;
