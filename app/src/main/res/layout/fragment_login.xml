@@ -40,51 +40,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.529" />
 
-    <ImageView
-        android:id="@+id/imgFacebook"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="208dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignup"
-        app:layout_constraintVertical_bias="0.642"
-        app:srcCompat="@mipmap/facebook" />
-
-    <ImageView
-        android:id="@+id/imgTwitter"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgFacebook"
-        app:layout_constraintVertical_bias="0.351"
-        app:srcCompat="@mipmap/twitter" />
-
-    <ImageView
-        android:id="@+id/imgGoogle"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imgTwitter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgFacebook"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@mipmap/google" />
 
     <TextView
         android:id="@+id/txtSignup"
