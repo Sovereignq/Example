@@ -16,6 +16,7 @@ public class User {
     public static final String COLUMN_TELEGRAMNICKNAME = "telegramNickname";
     public static final String COLUMN_EMAIL = "email";
     public static final String COLUMN_TELEPHONE = "telephone";
+    public static final String COLUMN_PASSWORD = "password";
 
     private int id;
     private String name;

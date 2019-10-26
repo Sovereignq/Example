@@ -30,7 +30,7 @@ public class MainActivity extends BaseActivity {
         isStoragePermissionGranted();
         changeFragmentTo(new FragmentData(FragmentById.LOGIN_FRAGMENT));
     }
-    public  boolean isStoragePermissionGranted() {
+    public boolean isStoragePermissionGranted() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (PERMISSION_GRANTED == ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                 Log.v(TAG,"Permission is granted");

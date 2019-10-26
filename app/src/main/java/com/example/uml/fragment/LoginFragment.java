@@ -1,5 +1,7 @@
 package com.example.uml.fragment;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.widget.Button;
 import android.widget.EditText;
 import com.example.uml.R;
@@ -20,14 +22,22 @@ import rx.Observable;
 @EFragment(R.layout.fragment_login)
 public class LoginFragment extends BaseFragment {
 
+    @ViewById(R.id.inputEmail)
+    EditText inputEmail;
+
+    @ViewById(R.id.inputPassword)
+    EditText inputPassword;
+
     @ViewById(R.id.btnSignup)
     Button btnSignup;
 
+    @ViewById(R.id.btnLogin)
+    Button buttonLogin;
+
     @AfterViews
     public void mainWork() {
-        EditText inputEmail = Objects.requireNonNull(getActivity()).findViewById(R.id.inputEmail);
-        EditText inputPassword = Objects.requireNonNull(getActivity()).findViewById(R.id.inputPassword);
-        Button buttonLogin = Objects.requireNonNull(getActivity()).findViewById(R.id.buttonLogin);
+        inputEmail = Objects.requireNonNull(getActivity()).findViewById(R.id.inputEmail);
+        inputPassword = Objects.requireNonNull(getActivity()).findViewById(R.id.inputPassword);
         buttonLogin.setEnabled(false);
 
         Observable<String> emailObservable = RxEditText.getTextWatcherObservable(inputEmail);
@@ -44,5 +54,18 @@ public class LoginFragment extends BaseFragment {
     @Click
     void btnSignup() {
         ((BaseActivity) Objects.requireNonNull(getActivity())).changeFragmentTo(new FragmentData(FragmentById.SIGNUP_FRAGMENT));
+    }
+    @Click
+    void buttonLogin(){
+        String [] array = new String[]{inputEmail.getText().toString(), inputPassword.getText().toString()};
+        SQLiteDatabase db = SQLiteDatabase.openDatabase("storage/emulated/0/Download/testDatabase.sqlite", null, SQLiteDatabase.OPEN_READWRITE);
+        Cursor cursor = db.rawQuery("SELECT * FROM "+User.TABLE_NAME+" WHERE "+User.COLUMN_EMAIL +"=?" + " AND "+ User.COLUMN_PASSWORD +" =?", array);
+        //if (cursor.getString(cursor.getColumnIndex(User.COLUMN_PASSWORD))== passwordObservable.toString() && cursor.getString(cursor.getColumnIndex(User.COLUMN_EMAIL)) == emailObservable.toString() )
+        if( cursor.getCount() == 1 /*&& cursor.getString(cursor.getColumnIndex(User.COLUMN_PASSWORD))== inputPassword.getText().toString() && cursor.getString(cursor.getColumnIndex(User.COLUMN_EMAIL)) == inputEmail.getText().toString()*/){
+            System.out.println("You're logged in");
+        }
+        else{
+            System.out.println("Invalid password or email!");
+        }
     }
 }

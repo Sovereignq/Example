@@ -54,7 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public long insertUser(User user) {
         // get writable database as we want to write data
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = SQLiteDatabase.openDatabase("testDatabase.sqlite", null, SQLiteDatabase.OPEN_READWRITE);
 
         ContentValues values = new ContentValues();
         // `id` and `timestamp` will be inserted automatically.
